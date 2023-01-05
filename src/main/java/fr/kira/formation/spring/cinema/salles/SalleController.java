@@ -2,6 +2,8 @@ package fr.kira.formation.spring.cinema.salles;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("salles")
 @CrossOrigin
@@ -33,4 +35,8 @@ public class SalleController {
         service.deleteById(id);
     }
 
+    @GetMapping("sallesDispo")
+    public List<Salle> findAllDispo() {
+        return service.findAllDispo();
+    }
 }
